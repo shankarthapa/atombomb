@@ -1,0 +1,2 @@
+# atombomb
+npm lib
