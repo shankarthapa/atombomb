@@ -1,0 +1,13 @@
+{
+  "entries": [
+    "./components/input-form/input-form.js",
+    "./components/my-component/my-component.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "3.4.0",
+    "typescriptVersion": "5.0.4"
+  },
+  "collections": [],
+  "bundles": []
+}
