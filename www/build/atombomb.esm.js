@@ -1,0 +1,2 @@
+import{p as t,b as o}from"./p-5e017805.js";export{s as setNonce}from"./p-5e017805.js";const e=()=>{const s=import.meta.url;const o={};if(s!==""){o.resourcesUrl=new URL(".",s).href}return t(o)};e().then((t=>o([["p-a89b07a5",[[1,"input-form",{first:[1],middle:[1],last:[1]}],[1,"my-component",{first:[1],middle:[1],last:[1]}]]]],t)));
+//# sourceMappingURL=atombomb.esm.js.map
