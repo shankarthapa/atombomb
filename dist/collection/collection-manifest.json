@@ -1,7 +1,8 @@
 {
   "entries": [
     "./components/input-form/input-form.js",
-    "./components/my-component/my-component.js"
+    "./components/my-component/my-component.js",
+    "./components/tx-button/tx-button.js"
   ],
   "compiler": {
     "name": "@stencil/core",

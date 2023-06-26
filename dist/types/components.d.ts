@@ -34,6 +34,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TxButton {
+    }
 }
 declare global {
     interface HTMLInputFormElement extends Components.InputForm, HTMLStencilElement {
@@ -48,9 +50,16 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTxButtonElement extends Components.TxButton, HTMLStencilElement {
+    }
+    var HTMLTxButtonElement: {
+        prototype: HTMLTxButtonElement;
+        new (): HTMLTxButtonElement;
+    };
     interface HTMLElementTagNameMap {
         "input-form": HTMLInputFormElement;
         "my-component": HTMLMyComponentElement;
+        "tx-button": HTMLTxButtonElement;
     }
 }
 declare namespace LocalJSX {
@@ -82,9 +91,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TxButton {
+    }
     interface IntrinsicElements {
         "input-form": InputForm;
         "my-component": MyComponent;
+        "tx-button": TxButton;
     }
 }
 export { LocalJSX as JSX };
@@ -93,6 +105,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "input-form": LocalJSX.InputForm & JSXBase.HTMLAttributes<HTMLInputFormElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "tx-button": LocalJSX.TxButton & JSXBase.HTMLAttributes<HTMLTxButtonElement>;
         }
     }
 }

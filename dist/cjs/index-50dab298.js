@@ -1,3 +1,25 @@
+'use strict';
+
+function _interopNamespace(e) {
+  if (e && e.__esModule) return e;
+  var n = Object.create(null);
+  if (e) {
+    Object.keys(e).forEach(function (k) {
+      if (k !== 'default') {
+        var d = Object.getOwnPropertyDescriptor(e, k);
+        Object.defineProperty(n, k, d.get ? d : {
+          enumerable: true,
+          get: function () {
+            return e[k];
+          }
+        });
+      }
+    });
+  }
+  n['default'] = e;
+  return Object.freeze(n);
+}
+
 const NAMESPACE = 'atombomb';
 
 /**
@@ -642,10 +664,13 @@ const patch = (oldVNode, newVNode) => {
     const elm = (newVNode.$elm$ = oldVNode.$elm$);
     const oldChildren = oldVNode.$children$;
     const newChildren = newVNode.$children$;
+    const tag = newVNode.$tag$;
     const text = newVNode.$text$;
     if (text === null) {
         {
-            {
+            if (tag === 'slot')
+                ;
+            else {
                 // either this is the first render of an element OR it's an update
                 // AND we already know it's possible it could have changed
                 // this updates the element's css classes, attrs, props, listeners, etc.
@@ -1261,12 +1286,12 @@ const loadModule = (cmpMeta, hostRef, hmrVersionId) => {
         return module[exportName];
     }
     /*!__STENCIL_STATIC_IMPORT_SWITCH__*/
-    return import(
+    return Promise.resolve().then(function () { return /*#__PURE__*/_interopNamespace(require(
     /* @vite-ignore */
     /* webpackInclude: /\.entry\.js$/ */
     /* webpackExclude: /\.system\.entry\.js$/ */
     /* webpackMode: "lazy" */
-    `./${bundleId}.entry.js${''}`).then((importedModule) => {
+    `./${bundleId}.entry.js${''}`)); }).then((importedModule) => {
         {
             cmpModules.set(bundleId, importedModule);
         }
@@ -1338,6 +1363,11 @@ const flush = () => {
 const nextTick = /*@__PURE__*/ (cb) => promiseResolve().then(cb);
 const writeTask = /*@__PURE__*/ queueTask(queueDomWrites, true);
 
-export { bootstrapLazy as b, h, promiseResolve as p, registerInstance as r, setNonce as s };
+exports.Host = Host;
+exports.bootstrapLazy = bootstrapLazy;
+exports.h = h;
+exports.promiseResolve = promiseResolve;
+exports.registerInstance = registerInstance;
+exports.setNonce = setNonce;
 
-//# sourceMappingURL=index-efec0e8a.js.map
+//# sourceMappingURL=index-50dab298.js.map
