@@ -1,2 +1,0 @@
-import{p as t,b as o}from"./p-14b40625.js";export{s as setNonce}from"./p-14b40625.js";const m=()=>{const s=import.meta.url;const o={};if(s!==""){o.resourcesUrl=new URL(".",s).href}return t(o)};m().then((t=>o([["p-37300ca2",[[1,"input-form",{first:[1],middle:[1],last:[1]}],[1,"my-component",{first:[1],middle:[1],last:[1]}]]],["p-c1d70a4b",[[1,"tx-button"]]]],t)));
-//# sourceMappingURL=atombomb.esm.js.map
